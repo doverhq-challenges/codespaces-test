@@ -20,10 +20,8 @@ RUN apt-get update \
 # Requirements are installed here to ensure they will be cached.
 WORKDIR /workspaces/app
 
-COPY ./api/dev-requirements.txt ./api/dev-requirements.txt
 RUN pip install pip==23.0.1
 RUN pip install pip-tools==7.3.0
-RUN pip-sync api/dev-requirements.txt
 
 COPY ./entrypoint /entrypoint
 RUN sed -i 's/\r$//g' /entrypoint
