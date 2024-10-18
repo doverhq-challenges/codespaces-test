@@ -19,9 +19,9 @@ services:
       - POSTGRES_HOST=localhost
       - POSTGRES_PORT=5432
       - POSTGRES_DB=api
-      - POSTGRES_USER=YusuJADoVMjXRstmThVZBKzruLjJgKwf
-      - POSTGRES_PASSWORD=qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI
-      - DATABASE_URL=postgres://YusuJADoVMjXRstmThVZBKzruLjJgKwf:qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI@localhost:5432/api
+      - POSTGRES_USER=PGUSER
+      - POSTGRES_PASSWORD=PGPW123
+      - DATABASE_URL=postgres://PGUSER:PGPW123@localhost:5432/api
     command: sleep infinity
     network_mode: service:postgres
     user: vscode
@@ -36,8 +36,8 @@ services:
       - POSTGRES_HOST=localhost
       - POSTGRES_PORT=5432
       - POSTGRES_DB=api
-      - POSTGRES_USER=YusuJADoVMjXRstmThVZBKzruLjJgKwf
-      - POSTGRES_PASSWORD=qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI
+      - POSTGRES_USER=PGUSER
+      - POSTGRES_PASSWORD=PGPW123
     ports:
       - "5432:5432"
       - "8000:8000"
