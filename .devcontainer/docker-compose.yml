@@ -1,0 +1,43 @@
+version: '3.8'
+
+volumes:
+  local_postgres_data: {}
+  local_postgres_data_backups: {}
+
+services:
+  django:
+    container_name: django
+    build:
+      context: ..
+      dockerfile: .devcontainer/Dockerfile
+    image: api_local_django
+    volumes:
+      - ..:/workspaces/app:cached
+    environment:
+      - DJANGO_SECRET_KEY=supersecretkey
+      - USE_DOCKER=yes
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=api
+      - POSTGRES_USER=YusuJADoVMjXRstmThVZBKzruLjJgKwf
+      - POSTGRES_PASSWORD=qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI
+      - DATABASE_URL=postgres://YusuJADoVMjXRstmThVZBKzruLjJgKwf:qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI@localhost:5432/api
+    command: sleep infinity
+    network_mode: service:postgres
+    user: vscode
+
+  postgres:
+    container_name: postgres
+    image: postgres:11.3
+    volumes:
+      - local_postgres_data:/var/lib/postgresql/data
+      - local_postgres_data_backups:/backups
+    environment:
+      - POSTGRES_HOST=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=api
+      - POSTGRES_USER=YusuJADoVMjXRstmThVZBKzruLjJgKwf
+      - POSTGRES_PASSWORD=qappTkT4fLRXFQnBAiX46Fvfv3U4sK2OFRnXbHeie3s84wM1oIODn1QGZ8sIzGEI
+    ports:
+      - "5432:5432"
+      - "8000:8000"
