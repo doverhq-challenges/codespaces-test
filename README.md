@@ -13,10 +13,14 @@ This is a test repository to get familiar with Github Codespaces.
    
     ![image](./docs/images/configure-codespace.png)
 
+    The codespace may take ~ 10 minutes to load.
+
     If the codespace fails to load, you may just want to remove the trailing `?editor=jupyter` from the browser URL.
 
+    Once loaded, take some time to make some files and play around with the codespace. 
+   
 
-2. **Recommended**: If you prefer to (and already have vscode installed) work on vscode desktop, you can do so by pressing the `Top left menu > Open in VS Code Desktop`
+3. **Recommended**: If you prefer to (and already have vscode installed) work on vscode desktop, you can do so by pressing the `Top left menu > Open in VS Code Desktop`
    
     ![image](./docs/images/open-vscode-desktop.png)
 
